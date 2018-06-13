@@ -1,6 +1,6 @@
 LED-goal-display
 
-Using ESP8266 module,
+Using ESP8266 module,</br>
       LED strip (60 LEDs long) x3
       Voltage regulator
       
