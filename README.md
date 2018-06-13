@@ -1,8 +1,8 @@
 LED-goal-display
 
-Using ESP8266 module,</br>
-      LED strip (60 LEDs long) x3</br>
-      Voltage regulator</br>
+Using: - ESP8266 module,</br>
+       - LED strip (60 LEDs long) x3</br>
+       - Voltage regulator</br>
       
 Connected 3 strips in series, layout next to each other.</br>
 Code shows input values on html page located at ESP8266 IP address.</br>
