@@ -5,7 +5,7 @@
 #include <Adafruit_NeoPixel.h>
 
 #define PIN 4
-#define NUM_LEDS 15
+#define NUM_LEDS 120
 int red = 1, green = 0;
 
 WiFiClient client;
@@ -17,6 +17,7 @@ ESP8266WebServer server(80); // Start server on port 80 (default for a web-brows
 int goal_input, current_input, display_val, colour_step, LED_target,LED_left;
 String Argument_Name, Clients_Response1, Clients_Response2;
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUM_LEDS, PIN);
+
 void setup() {
   Serial.begin(115200);
   pixels.begin(); // This initializes the NeoPixel library.
@@ -109,7 +110,7 @@ void ShowClientResponse() {
 
 void loop() {
   server.handleClient(); 
-  rainbow();
+  LED_light_up();
   }
 
 void LED_light_up() {
@@ -131,7 +132,7 @@ void LED_light_up() {
 void rainbow() {
     //display_val = ((current_input/goal_input) * 100);
     //goal_input = (goal_input/10);
-    if (current_input >= goal_input) {
+    if (current_input > goal_input) {
       pixels.clear();
       pixels.setPixelColor(0, pixels.Color(255,0,0));
       pixels.setPixelColor(1, pixels.Color(255,5,0));
@@ -151,7 +152,7 @@ void rainbow() {
       pixels.setPixelColor(15, pixels.Color(0,255,0));
       pixels.show();
     }
-    if (current_input >= (goal_input * 0.94)) {
+    if (current_input >= (goal_input * 0.995)) {
       pixels.clear();
       pixels.setPixelColor(0, pixels.Color(255,0,0));
       pixels.setPixelColor(1, pixels.Color(255,5,0));
@@ -170,7 +171,7 @@ void rainbow() {
       pixels.setPixelColor(14, pixels.Color(20,200,0));
       pixels.show();
     }
-    if (current_input >= (goal_input * 0.87)) {
+    if (current_input >= (goal_input * 0.91)) {
       pixels.clear();
       pixels.setPixelColor(0, pixels.Color(255,0,0));
       pixels.setPixelColor(1, pixels.Color(255,5,0));
@@ -188,7 +189,7 @@ void rainbow() {
       pixels.setPixelColor(13, pixels.Color(40,180,0));
       pixels.show();
     }
-    if (current_input >= (goal_input * 0.81)) {
+    if (current_input >= (goal_input * 0.83)) {
       pixels.clear();
       pixels.setPixelColor(0, pixels.Color(255,0,0));
       pixels.setPixelColor(1, pixels.Color(255,5,0));
@@ -205,7 +206,7 @@ void rainbow() {
       pixels.setPixelColor(12, pixels.Color(60,160,0));
       pixels.show();
     }
-    if (current_input >= (goal_input * 0.76)) {
+    if (current_input >= (goal_input * 0.77)) {
       pixels.clear();
       pixels.setPixelColor(0, pixels.Color(255,0,0));
       pixels.setPixelColor(1, pixels.Color(255,5,0));
